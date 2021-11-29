@@ -12,6 +12,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  overflow-x: hidden;
   color: var(--sec-clr);
 }
 p,
@@ -34,6 +35,30 @@ a {
   align-items: center;
   justify-content: center;
 }
+#loader {
+  transition: all 0.3s ease;
+  position: fixed;
+  background: black;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+#loader img {
+  animation: vanisher 2s ease-in-out infinite;
+}
+@keyframes vanisher {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 #home {
   height: 100vh;
   width: 100%;
@@ -47,7 +72,7 @@ a {
 .head-content {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .head-content .writeup {
   margin-right: 4rem;
@@ -61,9 +86,9 @@ a {
   letter-spacing: 0;
   font-weight: 900;
 }
-nav {
+/* nav {
   padding-inline: 1.5rem;
-}
+} */
 .nav-item {
   padding: 0.5rem;
 }
@@ -75,7 +100,6 @@ nav {
 .bio-img {
   position: relative;
   transition: all 0.8s ease;
-  /* box-shadow: 15px 15px 0px var(--accent-clr); */
 }
 
 .bio-img img {
@@ -92,27 +116,23 @@ nav {
   text-align: justify;
 }
 #tour {
+  flex-direction: row;
   justify-content: space-around;
-  padding: 4rem;
+  padding: 1rem;
   background: whitesmoke;
+  padding-top: 3rem;
 }
-.tour-img-box {
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  position: relative;
+#tour .card {
+  transition: all 0.3s ease;
 }
-.tour-img-box img {
-  width: 280px;
-  margin-block: 0.1rem;
-  box-shadow: 0 0 18px var(--prim-clr);
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px var(--prim-clr);
 }
-
 .page-heading {
   display: inline;
   position: absolute;
-  top: 1%;
-  /* z-index: -1; */
+  top: 0%;
   text-align: center;
   font-size: 10rem;
   font-weight: bolder;
@@ -123,6 +143,7 @@ nav {
 }
 #music {
   padding-top: 7rem;
+  padding-bottom: 2rem;
   flex-wrap: wrap;
   background-color: rgb(107, 107, 107);
 }
@@ -152,26 +173,35 @@ nav {
   color: black;
 }
 #contact {
+  padding-top: 0;
+  display: flex;
   background-color: rgb(63, 63, 63);
   flex-direction: column;
 }
-#contact input,
-#contact textarea {
-  z-index: 2;
-  display: inline-block;
-  width: 90%;
-  border: none;
-  /* border: 10px solid rgb(63, 63, 63); */
-  max-width: 800px;
-  padding: 0.4rem;
-  margin-top: 6rem;
-  /* border-radius: 5px; */
-  background-color: rgb(233, 233, 233);
-  outline: none;
+#contact h1 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  font-weight: bolder;
+  color: white;
 }
-#contact textarea {
+#contact form {
+  margin-top: 0;
+  width: 90%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+form input,
+textarea {
+  width: 100%;
+  border: 1px solid rgb(63, 63, 63);
+  border-block: 15px solid rgb(63, 63, 63);
+  padding: 0.4rem;
+}
+textarea {
+  height: 180px;
   margin-top: 2rem;
-  height: 250px;
 }
 #contact button,
 .learn {
@@ -185,34 +215,33 @@ nav {
   transition: all 0.3s ease;
 }
 #contact button:hover,
-.learn:hover {
+.learn:hover,
+.learn:hover a {
   background: white;
   color: rgb(63, 63, 63);
+}
+.learn a {
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
 }
 @media screen and (max-width: 870px) {
   #home {
     min-width: 100%;
-    background-image: none;
-    background-color: black;
     padding-bottom: 1rem;
-  }
-  .writeup {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
   }
   #about,
   #music,
+  #tour,
   #contact {
-    padding-top: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
     flex-direction: column;
   }
   #about div,
   #music div,
   #contact div {
-    margin: 0rem;
+    margin-block: 1rem;
     justify-content: center;
     margin-inline: 5px;
     padding-inline: 5px;
@@ -225,30 +254,37 @@ nav {
   }
   .page-heading {
     top: 1%;
-    font-size: 4rem;
+    font-size: 5rem;
   }
   .head-content {
+    min-width: 100%;
     margin-top: 1rem;
     display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     flex-direction: column;
   }
   .writeup {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
     margin-bottom: 4rem;
   }
   .writeup h1 {
-    font-size: 4.6rem;
-    margin-left: 80px;
+    font-size: calc(1rem + 10vw);
     text-align: center;
   }
-  .tour-img-box {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  .bio p {
+    line-height: 1.4rem;
+    letter-spacing: 0.05rem;
+    font-size: 0.85rem;
+    font-weight: light;
   }
-  .tour-img-box img {
-    width: 100px;
+  .bio-img {
+    width: 80%;
   }
 }

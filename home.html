@@ -13,6 +13,7 @@
     <title>Nucleya</title>
 </head>
 <body>
+  <div id="loader"><img src="./images/blackLogo.jpg" alt="" srcset=""></div>
     <section class="page" id="home">
         <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
@@ -31,16 +32,16 @@
                       <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#home"><i class="fas fa-home"></i> About</a>
+                        <a class="nav-link" href="#home"><strong><i class="fas fa-home"></i></strong> About</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#tour"><i class="fas fa-rocket"></i> Tour</a>
+                      <a class="nav-link" href="#tour"><strong><i class="fas fa-rocket"></i></strong> Tour</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#music"><i class="fas fa-music"></i> Music</a>
+                        <a class="nav-link" href="#music"><strong><i class="fas fa-music"></i></strong> Music</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact"><i class="fas fa-message"></i> Contact</a>
+                        <a class="nav-link" href="#contact"><strong><i class="fas fa-message"></i></strong> Contact</a>
                     </li>
                   </ul>
                 </div>
@@ -51,7 +52,7 @@
               <div class="writeup">
                 <h4>Welcome to the world of</h4>
                 <h1 class="main-title">Nucleya</h1>
-                <button class="learn">LEARN MORE</button>
+                <button class="learn"><a href="#about">LEARN MORE</a></button>
               </div>
               <div class="banner-image">
                   <img src="./images/blackLogo.jpg" alt="">
@@ -72,39 +73,37 @@
           </section>
         <section class="page" id="tour">
             <h1 class="page-heading">tours</h1>
-              <div class="tour-img-box">
-              <img src="./images/nucleyaandcrowd.jpg" alt="">
-              <img src="./images/nucleya-sunburn-ians.jpg" alt="">
-            </div>
-            <div class="tour-list">
-              <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Ahmedabad</h5>
-                    <small>24 DEC</small>
+              <!--  -->
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                  <div class="card">
+                    <img src="./images/nucleyaandcrowd.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Ahmedabad</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque et ullam dicta impedit in praesentium expedita voluptas nostrum autem hic.</p>
+                    </div>
                   </div>
-                  <p class="mb-1">Coming back to my Hometown to Celebrate this weekend</p>
-                  <small>At NCC ground, Ramdas Chowk</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">New Delhi</h5>
-                    <small class="text-muted">25 DEC</small>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="./images/nucleya-sunburn-ians.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Mumbai</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi cupiditate pariatur sunt, quae vel velit aspernatur consequatur fugiat neque iusto laudantium facere.</p>
+                    </div>
                   </div>
-                  <p class="mb-1">Celebrate Christmas with me at Delhi</p>
-                  <small class="text-muted">Udyan Sagar Maidan, New Delhi</small>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                  <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">Mumbai</h5>
-                    <small class="text-muted">31 DEC</small>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="./images/withcrowd2.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">New Delhi</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aut ab harum deleniti quis? Repellendus harum earum veniam ab?</p>
+                    </div>
                   </div>
-                  <p class="mb-1">This new year I am with Mumbai. Come On!</p>
-                  <small class="text-muted">Azad Maidan, Matunga</small>
-                </a>
+                </div>
               </div>
-            </div>
-        </section>
+          </section>
         <section class="page" id="music">
             <h1 class="page-heading">music</h1>
             <div class="album">
@@ -129,10 +128,18 @@
             </div>
         </section>
         <section class="page" id="contact">
-          <h1 class="page-heading">contact</h1>
-          <input type="text" name="email" placeholder="Email">
-          <textarea name="message" placeholder="Meassage" rows="4" cols="50"></textarea>
-          <button>Send Message</button>
+          <!-- <h1 class="page-heading">contact</h1> -->
+          <h1>CONTACT</h1>
+          <form action="https://formspree.io/f/xqknzlgb" method="POST">
+            <label>
+              <input type="email" placeholder="Email" name="_replyto">
+            </label>
+            <label>
+              <textarea placeholder="Hi there" name="message"></textarea>
+            </label>
+            <!-- your other form fields go here -->
+            <button type="submit">Send message</button>
+          </form>
         </section>
         <!-- Footer -->
         <footer class="bg-dark text-center text-white">
@@ -141,27 +148,27 @@
             <!-- Section: Social media -->
             <section class="mb-4">
               <!-- Facebook -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/nucleya/" role="button"
                 ><i class="fab fa-facebook-f"></i
               ></a>
         
               <!-- Twitter -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              <a class="btn btn-outline-light btn-floating m-1" href="https://twitter.com/NUCLEYA" role="button"
                 ><i class="fab fa-twitter"></i
               ></a>
         
               <!-- Google -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              <a class="btn btn-outline-light btn-floating m-1" href="https://open.spotify.com/artist/2CkrXQPoBz8jTQ3u0ZeLPh" role="button"
                 ><i class="fab fa-spotify"></i
               ></a>
         
               <!-- Instagram -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/nucleya/" role="button"
                 ><i class="fab fa-instagram"></i
               ></a>
         
               <!-- Youtube -->
-              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              <a class="btn btn-outline-light btn-floating m-1" href="https://www.youtube.com/channel/UCiOCRcSMr5CCjVH_p5vPyJQ" role="button"
                 ><i class="fab fa-youtube"></i
               ></a>
         
