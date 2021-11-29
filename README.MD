@@ -1,1 +1,1 @@
-Hi
+Hey,I have picked the fifth Task that is to Make a Landing page for a brand or celebrity and this my attempt. The site has a very modern and classy look. Its is completely responsive and works smoothly in any devices thanks to bootstrap. It also makes use of GSAP a standard library for animations for some animations. All images and other assets are cleverly picked for smooth functioning even at low connectivity.
