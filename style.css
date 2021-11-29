@@ -27,8 +27,9 @@ a {
 }
 .page {
   /* padding: 2rem; */
-  min-height: 80vh;
+  min-height: 100vh;
   position: relative;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,10 +75,11 @@ nav {
 .bio-img {
   position: relative;
   transition: all 0.8s ease;
-  box-shadow: 15px 15px 0px var(--accent-clr);
+  /* box-shadow: 15px 15px 0px var(--accent-clr); */
 }
 
 .bio-img img {
+  box-shadow: 15px 15px 0px var(--accent-clr);
   width: 370px;
 }
 .bio h4,
@@ -115,7 +117,7 @@ nav {
   font-size: 10rem;
   font-weight: bolder;
   text-transform: uppercase;
-  opacity: 0.5;
+  opacity: 0.3;
   color: var(--accent-clr);
   letter-spacing: 0.5rem;
 }
@@ -189,13 +191,45 @@ nav {
 }
 @media screen and (max-width: 870px) {
   #home {
-    min-height: 100vh;
     min-width: 100%;
     background-image: none;
     background-color: black;
+    padding-bottom: 1rem;
+  }
+  .writeup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  #about,
+  #music,
+  #contact {
+    padding-top: 4rem;
+    flex-direction: column;
+  }
+  #about div,
+  #music div,
+  #contact div {
+    margin: 0rem;
+    justify-content: center;
+    margin-inline: 5px;
+    padding-inline: 5px;
+    width: 85%;
+  }
+  .bio-img {
+    display: grid;
+    place-items: center;
+    margin-bottom: 2rem;
+  }
+  .page-heading {
+    top: 1%;
+    font-size: 4rem;
   }
   .head-content {
-    margin-top: 4rem;
+    margin-top: 1rem;
+    display: flex;
     text-align: center;
     flex-direction: column;
   }
@@ -203,7 +237,18 @@ nav {
     margin-bottom: 4rem;
   }
   .writeup h1 {
-    font-size: 5rem;
+    font-size: 4.6rem;
+    margin-left: 80px;
     text-align: center;
+  }
+  .tour-img-box {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tour-img-box img {
+    width: 100px;
   }
 }
